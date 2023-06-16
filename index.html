@@ -4,19 +4,12 @@
 <body>
     <h1 style="display:flex;
         justify-content:center;color:green;">
-        GeeksforGeeks
+        Test iFrame
     </h1>
   
-    <iframe src="about:blank" id="frame1" hidden> </iframe>
-    <iframe src="about:blank" id="frame2" hidden> </iframe>
-    <button id="update">Click me</button>
-    <script>
-        document.getElementById('update').addEventListener('click', function () {
-              // Change src attribute of iframes at a same time
-            document.getElementById('frame1').src ='https://www.google.com/search?q=java&igu=1';
-            document.getElementById('frame2').src ='https://www.google.com/search?q=farming&igu=1';
-        });
-    </script>
+    <iframe id="frame1" src="https://google.com" hidden> </iframe>
+    <iframe id="frame2" src="https://weather.com" hidden> </iframe>
+    <button id="update">Show workflow</button>
     <script>
       let toggle = button => {
         let element = document.getElementById("frame1");
