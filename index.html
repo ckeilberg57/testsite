@@ -8,14 +8,12 @@
     </h1>
   
     <iframe id="frame1" src="https://google.com" style="height:200px;width:50%;" hidden> </iframe>
-    <iframe id="frame2" src="https://weather.com" style="height:400px;width:50%;" hidden> </iframe>
   
-  <button onclick="toggle(this);">Show Iframe</button>
+    <button onclick="toggle(this);">Show Iframe</button>
 
     <script>
       let toggle = button => {
         let element = document.getElementById("frame1");
-        let element = document.getElementById("frame2");
         
         if (hidden) {
           element.removeAttribute("hidden");
