@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript">
+        var frm = ['gallery', 'info'];
+        var hrf = ['http://google.com/', 'http://weather.com/'];
+
+        function setSource() {
+            for(i=0, l=frm.length; i<l; i++) {
+                document.querySelector('iframe[name="'+frm[i]+'"]').src = hrf[i];
+            }
+        }
+    </script>
+</head>
+<body>
+    <iframe src="" name="gallery"></iframe>
+    <iframe src="" name="info"></iframe>
+    <span onclick="javascript: setSource();">Click me</span>
+</body>
+</html>
