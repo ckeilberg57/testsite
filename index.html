@@ -11,18 +11,18 @@
   
     <button onclick="toggle(this);">Show Iframe</button>
 
-    <script>
-      let toggle = button => {
-        let element = document.getElementById("frame1");
+</body>
+<script>
+  let toggle = button => {
+    let element = document.getElementById("frame1");
         
-        if (hidden) {
+     if (hidden) {
           element.removeAttribute("hidden");
           button.innerText = "Hide Iframe";
-        } else {
+     } else {
           element.setAttribute("hidden", "hidden");
           button.innerText = "Show Iframe";
-        }
-      }
-    </script>
-</body>
+     }
+   }
+</script>
 </html>
