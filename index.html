@@ -1,20 +1,13 @@
-<!DOCTYPE html>
-<html>
-  
-    <iframe id="frame1" src="https://google.com" style="height:200px;width:50%;" hidden> </iframe>
-  
-    <button onclick="toggle(this);">Show Iframe</button>
-<script>
-  let toggle = button => {
-    let element = document.getElementById("frame1");
-        
-     if (hidden) {
-          element.removeAttribute("hidden");
-          button.innerText = "Hide Iframe";
-     } else {
-          element.setAttribute("hidden", "hidden");
-          button.innerText = "Show Iframe";
-     }
-   }
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.0/jquery.min.js"></script>
+<script type="text/javascript">
+$(function(){
+    $('#button').click(function(){ 
+        if(!$('#iframe').length) {
+                $('#iframeHolder').html('<iframe id="iframe" src="https://google.com" width="700" height="450"></iframe>');
+        }
+    });   
+});
 </script>
-</html>
+ 
+<button id="button">Button</button>
+<div id="iframeHolder"></div>
