@@ -1,17 +1,9 @@
 <!DOCTYPE html>
 <html>
   
-<body>
-    <h1 style="display:flex;
-        justify-content:center;color:green;">
-        Test iFrame
-    </h1>
-  
     <iframe id="frame1" src="https://google.com" style="height:200px;width:50%;" hidden> </iframe>
   
     <button onclick="toggle(this);">Show Iframe</button>
-
-</body>
 <script>
   let toggle = button => {
     let element = document.getElementById("frame1");
