@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <script type="text/javascript">
-        var frm = ['gallery', 'info'];
-        var hrf = [['https://google.com/', 'https://weather.com/'], ['https://pexip.com/', 'https://docs.pexip.com']];
-
-        function setSource(num) {
-            for(i=0, l=frm.length; i<l; i++) {
-                document.querySelector('iframe[name="'+frm[i]+'"]').src = hrf[num][i];
-            }
-        }
-    </script>
-</head>
+  
 <body>
-    <iframe src="" name="gallery"></iframe>
-    <iframe src="" name="info"></iframe>
-    <span onclick="javascript: setSource(0);">Click me #0</span>
-    <span onclick="javascript: setSource(1);">Click me #1</span>
+    <h1 style="display:flex;
+        justify-content:center;color:green;">
+        GeeksforGeeks
+    </h1>
+  
+    <iframe src="about:blank" id="frame1"> </iframe>
+    <iframe src="about:blank" id="frame2"> </iframe>
+    <button id="update">Click me</button>
+    <script>
+        document.getElementById('update').addEventListener('click', function () {
+              // Change src attribute of iframes at a same time
+            document.getElementById('frame1').src ='https://www.google.com/search?q=java&igu=1';
+            document.getElementById('frame2').src ='https://www.google.com/search?q=farming&igu=1';
+        });
+    </script>
 </body>
 </html>
