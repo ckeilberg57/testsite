@@ -1,13 +1,80 @@
-<script type="text/javascript" src=https://ajax.googleapis.com/ajax/libs/jquery/1.6.0/jquery.min.js></script>
-<script type="text/javascript">
-$(function(){
-    $('#button').click(function(){ 
-        if(!$('#iframe').length) {
-                $('#iframeHolder').html('<iframe id="iframe" src="https://cklab-edges.ck-collab-engtest.com" width="700" height="450"></iframe>');
-        }
-    });   
-});
-</script>
- 
-<button id="button">Button</button>
-<div id="iframeHolder"></div>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Zoom DR</title>
+</head>
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    background: url('SLED-DR-2.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* Adjust background positioning for smaller screens */
+@media (max-width: 768px) {
+    body {
+        background-position: top center;
+    }
+}
+
+div#video-container {
+    display: none;
+}
+
+div.video-controls {
+    display: block;
+    position: absolute;
+    bottom: 35px;
+    color: #cdcdcd;
+}
+
+div.video-controls i {
+    opacity: 0.4;
+    font-size: 25px;
+    background-color: rgba(30, 30, 30, .8);
+    padding: 10px;
+    border-radius: 50%;
+    z-index: 10000;
+}
+
+div.video-controls i:hover {
+    cursor: pointer;
+    opacity: 1.0;
+}
+div.row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+</style>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+
+    <div class="container">
+        <h1>Click to Enter Existing ID Meeting ID</h1>
+        <button id="IDBtn">Existing Meeting ID</button>
+        <div id="meetingForm" class="hidden">
+            <p>Meeting ID: <span id="alias"></span></p>
+            <input type="hidden" id="meetId">
+            <button id="submitBtn">Submit</button>
+        </div>
+    </div>
+    
+<div class="container">
+    <div class="row">
+      <div class="col text-center my-auto">
+        <a id="launchpex"
+            href="https://pexip.com"
+            class="btn btn-primary btn-lg" type="button" title="Pexip is Up!"
+            onclick="window.open('https://pexip.com'); return false;">
+            Site is Up!
+        </a>
+      </div>
+
+</body>
+</html>
