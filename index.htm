@@ -23,8 +23,6 @@
             const meetingId = document.getElementById("meetingId").value;
             const generatedLink = `https://pex-gcc.com/ucsf/webapp3/?conference=${meetingId}`;
             document.getElementById("generatedLink").textContent = generatedLink;
-        document.getElementById("meetingForm").addEventListener("submit", function(event) {
-            event.preventDefault();
             const hostID = document.getElementbyID("hostId").value;
             const generatedHostLink = `https://pex-gcc.com/ucsf/webapp3/?conference=${meetingId}&role=host&pin=${hostId}`;
             document.getElementById("generatedHostLink").textContent = generatedHostLink;
