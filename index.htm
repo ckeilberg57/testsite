@@ -18,24 +18,23 @@ body {
     }
 }
 
-.button-container{
-}
+    <h1>Enter Meeting ID</h1>
+    <form id="meetingForm">
+        <label for="meetingId">Meeting ID:</label>
+        <input type="text" id="meetingId" name="meetingId" required>
+        <button type="submit">Launch Meeting</button>
+    </form>
+    
+    <h2>Generated Link:</h2>
+    <p id="generatedLink"></p>
 
-button {
-    margin: 10px
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #3498db;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-</style>
-
-    <div class="button-container">
-        <button id="button 1">Enter Meeting ID</button>
-        <button id="button 2">Submit</button>
+    <script>
+        document.getElementById("meetingForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const meetingId = document.getElementById("meetingId").value;
+            const generatedLink = `https://pex-gcc.com/ucsf/webapp3/?conference=${meetingId}`;
+            document.getElementById("generatedLink").textContent = generatedLink;
+        });
+    </script>
 </body>
 </html>
