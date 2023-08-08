@@ -4,18 +4,18 @@
     <title>Meeting ID and Host PIN Form</title>
 </head>
 <body>
-    <h1>Zoom is currently experiencing issues, please enter Zoom information to be directed to Pexip</h1>
+    <h1>Enter Meeting ID and Host PIN</h1>
     <form id="meetingForm">
         <label for="meetingId">Meeting ID:</label>
         <input type="text" id="meetingId" name="meetingId" required>
         <br>
-        <label for="hostPin">Host PIN (Optional):</label>
-        <input type="text" id="hostPin" name="hostPin">
+        <label for="hostPin">Host PIN:</label>
+        <input type="text" id="hostPin" name="hostPin" required>
         <br>
         <button type="button" onclick="generateLinks()">Generate Links</button>
     </form>
     
-    <h2>Participant Generated Link:</h2>
+    <h2>Generated Links:</h2>
     <p id="meetingLink"></p>
     <p id="meetingAndHostLink"></p>
 
@@ -24,12 +24,8 @@
             const meetingId = document.getElementById("meetingId").value;
             const hostPin = document.getElementById("hostPin").value;
 
-            const meetingLink = `<a href="https://pex-gcc.com/ucsf/?conference=${meetingId}" target="_blank">Participant Link for MeetingID: ${meetingID}</a>`;
-            let meetingAndHostLink = "";
-
-            if (hostPin !== "") {
-                meetingAndHostLink = `<a href="https://pex-gcc.com/ucsf/?conference=${meetingId}&role=host&pin=${hostPin}" target="_blank">Host Link for MeetingID: ${meetingID}</a>`;
-            }
+            const meetingLink = `<a href="https://pex-gcc.com/ucsf/?conference=${meetingId}" target="_blank">Participant Meeting Link for ${meetingID}</a>`;
+            const meetingAndHostLink = `<a href="https://pex-gcc.com/ucsf/?conference=${meetingId}&role=host&pin=${hostPin}" target="_blank">Host Link for ${meetingID}</a>`;
 
             document.getElementById("meetingLink").innerHTML = meetingLink;
             document.getElementById("meetingAndHostLink").innerHTML = meetingAndHostLink;
