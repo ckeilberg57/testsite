@@ -28,8 +28,8 @@
             const meetingLink = `<a href="https://pex-gcc.com/ucsf/webapp3/?conference=${meetingId}" target="_blank">Join as a participant to Meeting: ${meetingId}`;
             const meetingAndHostLink = `<a href="https://pex-gcc.com/ucsf/webapp3/?conference=${meetingId}&role=host&pin=${hostPin}" target="_blank">Join as the host to Meeting: ${meetingId}`;
 
-            document.getElementById("meetingLink").textContent = `Meeting Link: ${meetingLink}`;
-            document.getElementById("meetingAndHostLink").textContent = `Meeting & Host Link: ${meetingAndHostLink}`;
+            document.getElementById("meetingLink").innerHTML = `Meeting Link: ${meetingLink}`;
+            document.getElementById("meetingAndHostLink").innerHTML = `Meeting & Host Link: ${meetingAndHostLink}`;
         });
     </script>
 
