@@ -13,9 +13,9 @@
         <button type="submit">Launch Meeting</button>
     </form>
     
-    <h2>Generated Link:</h2>
+    <h2>Participant Link:</h2>
     <p id="generatedLink"></p>
-    <h3>Generated Host Link</h3>
+    <h2>Host Link</h2>
     <p id="generatedHostLink"></p>
     <script>
         document.getElementById("meetingForm").addEventListener("submit", function(event) {
@@ -25,7 +25,7 @@
             const generatedLink = `https://pex-gcc.com/ucsf/webapp3/?conference=${meetingId}`;
             const generatedHostLink = `https://pex-gcc.com/ucsf/webapp3/?conference=${meetingId}&role=host&pin=${hostId}`;
             document.getElementById("generatedLink").textContent = generatedLink;
-            document.getElementById("generatedHostLink").textContent = generatedLink;
+            document.getElementById("generatedHostLink").textContent = generatedHostLink;
         });
     </script>
 </body>
