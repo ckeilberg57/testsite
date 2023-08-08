@@ -1,4 +1,3 @@
-Copy code
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,15 +15,14 @@ Copy code
         <button type="button" onclick="generateLinks()">Generate Links</button>
     </form>
     
-    <h2>Guest Participant Generated Link:</h2>
+    <h2>Participant Generated Link:</h2>
     <p id="meetingLink"></p>
-    <h2>Host Generated Link:</h2>
     <p id="meetingAndHostLink"></p>
 
     <script>
         function generateLinks() {
-            const meetingId = encodeURIComponent(document.getElementById("meetingId").value);
-            const hostPin = encodeURIComponent(document.getElementById("hostPin").value);
+            const meetingId = document.getElementById("meetingId").value;
+            const hostPin = document.getElementById("hostPin").value;
 
             const meetingLink = `<a href="https://pex-gcc.com/ucsf/?conference=${meetingId}" target="_blank">Participant Link for MeetingID: ${meetingID}</a>`;
             let meetingAndHostLink = "";
