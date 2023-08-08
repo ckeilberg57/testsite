@@ -1,31 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Meeting ID Disaster Form</title>
+    <title>Meeting ID and Host PIN Form</title>
 </head>
 <body>
-    <h1>Enter Zoom Meeting Information</h1>
+    <h1>Enter Zoom Meeting ID and (Optional) Host PIN</h1>
     <form id="meetingForm">
         <label for="meetingId">Meeting ID:</label>
         <input type="text" id="meetingId" name="meetingId" required>
-        <label for="hostId">Host ID (Optional):</label>
-        <input type="text" id="hostId" name="hostId" required>
-        <button type="submit">Launch Meeting</button>
+        <br>
+        <label for="hostPin">Host PIN (Optional):</label>
+        <input type="text" id="hostPin" name="hostPin" required>
+        <br>
+        <button type="submit">Generate Links</button>
     </form>
     
     <h2>Participant Link:</h2>
-    <p id="generatedLink"></p>
-    <h2>Host Link</h2>
-    <p id="generatedHostLink"></p>
+    <p id="meetingLink"></p>
+    <h2>Host Link:</h2>
+    <p id="meetingAndHostLink"></p>
     <script>
         document.getElementById("meetingForm").addEventListener("submit", function(event) {
             event.preventDefault();
             const meetingId = document.getElementById("meetingId").value;
-            const generatedLink = `https://pex-gcc.com/ucsf/webapp3/?conference=${meetingId}`;
-            document.getElementById("generatedLink").textContent = generatedLink;
-            const hostID = document.getElementbyID("hostId").value;
-            const generatedHostLink = `https://pex-gcc.com/ucsf/webapp3/?conference=${meetingId}&role=host&pin=${hostId}`;
-            document.getElementById("generatedHostLink").textContent = generatedHostLink;
+            const hostPin = document.getElementById("hostPin").value;
+
+            const meetingLink = `https://pex-gcc.com/ucsf/webapp3/?conference=${meetingId}`;
+            const meetingAndHostLink = `https://pex-gcc.com/ucsf/webapp3/?conference=${meetingId}/host/${hostPin}`;
+
+            document.getElementById("meetingLink").textContent = `Meeting Link: ${meetingLink}`;
+            document.getElementById("meetingAndHostLink").textContent = `Meeting & Host Link: ${meetingAndHostLink}`;
         });
     </script>
 
