@@ -20,8 +20,7 @@
     <h2>Host Link:</h2>
     <p id="meetingAndHostLink"></p>
     <script>
-        document.getElementById("meetingForm").addEventListener("submit", function(event) {
-            event.preventDefault();
+        function generateLinks() {
             const meetingId = document.getElementById("meetingId").value;
             const hostPin = document.getElementById("hostPin").value;
 
