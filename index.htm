@@ -26,10 +26,10 @@
             const hostPin = document.getElementById("hostPin").value;
 
             const meetingLink = `https://pex-gcc.com/ucsf/webapp3/?conference=${meetingId}`;
-            const meetingAndHostLink = `https://pex-gcc.com/ucsf/webapp3/?conference=${meetingId}/host/${hostPin}`;
+            const meetingAndHostLink = `https://pex-gcc.com/ucsf/webapp3/?conference=${meetingId}&role=host&pin=${hostPin}`;
 
-            document.getElementById("meetingLink").textContent = `Meeting Link: ${meetingLink}`;
-            document.getElementById("meetingAndHostLink").textContent = `Meeting & Host Link: ${meetingAndHostLink}`;
+            document.getElementById("meetingLink").textContent = `Meeting Link: href=${meetingLink}`;
+            document.getElementById("meetingAndHostLink").textContent = `Meeting & Host Link: href=${meetingAndHostLink}`;
         });
     </script>
 
