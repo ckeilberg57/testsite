@@ -1,10 +1,11 @@
+Copy code
 <!DOCTYPE html>
 <html>
 <head>
     <title>Meeting ID and Host PIN Form</title>
 </head>
 <body>
-    <h1>Enter Zoom Meeting ID and (Optional) Host PIN</h1>
+    <h1>Zoom is currently experiencing issues, please enter Zoom information to be directed to Pexip</h1>
     <form id="meetingForm">
         <label for="meetingId">Meeting ID:</label>
         <input type="text" id="meetingId" name="meetingId" required>
@@ -15,25 +16,26 @@
         <button type="button" onclick="generateLinks()">Generate Links</button>
     </form>
     
-    <h2>Participant Link:</h2>
+    <h2>Guest Participant Generated Link:</h2>
     <p id="meetingLink"></p>
-    <h2>Host Link:</h2>
+    <h2>Host Generated Link:</h2>
     <p id="meetingAndHostLink"></p>
+
     <script>
         function generateLinks() {
-            const meetingId = document.getElementById("meetingId").value;
-            const hostPin = document.getElementById("hostPin").value;
+            const meetingId = encodeURIComponent(document.getElementById("meetingId").value);
+            const hostPin = encodeURIComponent(document.getElementById("hostPin").value);
 
-            const meetingLink = `<a href="https://pex-gcc.com/ucsf/webapp3/?conference=${meetingId}" target="_blank">Join as a participant to Meeting: ${meetingId}`;
+            const meetingLink = `<a href="https://pex-gcc.com/ucsf/?conference=${meetingId}" target="_blank">Participant Link for MeetingID: ${meetingID}</a>`;
             let meetingAndHostLink = "";
-            
-            if (hostPin !=="") {
-                meetingAndHostLink = `<a href="https://pex-gcc.com/ucsf/webapp3/?conference=${meetingId}&role=host&pin=${hostPin}" target="_blank">Join as the host to Meeting: ${meetingId}`
 
-            document.getElementById("meetingLink").innerHTML = `Meeting Link: ${meetingLink}`;
-            document.getElementById("meetingAndHostLink").innerHTML = `Meeting & Host Link: ${meetingAndHostLink}`;
-        });
+            if (hostPin !== "") {
+                meetingAndHostLink = `<a href="https://pex-gcc.com/ucsf/?conference=${meetingId}&role=host&pin=${hostPin}" target="_blank">Host Link for MeetingID: ${meetingID}</a>`;
+            }
+
+            document.getElementById("meetingLink").innerHTML = meetingLink;
+            document.getElementById("meetingAndHostLink").innerHTML = meetingAndHostLink;
+        }
     </script>
-
 </body>
 </html>
