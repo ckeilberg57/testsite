@@ -1,35 +1,39 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Meeting ID and Host PIN Form</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meeting Links Generator</title>
 </head>
 <body>
-    <h1>Enter Meeting ID and Host PIN</h1>
+    <h1>Meeting Links Generator</h1>
     <form id="meetingForm">
-        <label for="meetingId">Meeting ID:</label>
-        <input type="text" id="meetingId" name="meetingId" required>
-        <br>
+        <label for="meetingID">Meeting ID:</label>
+        <input type="text" id="meetingID" name="meetingID"><br><br>
+
         <label for="hostPin">Host PIN:</label>
-        <input type="text" id="hostPin" name="hostPin" required>
-        <br>
-        <button type="button" onclick="generateLinks()">Generate Links</button>
+        <input type="text" id="hostPin" name="hostPin"><br><br>
+
+        <input type="submit" value="Generate Links">
     </form>
-    
+
     <h2>Generated Links:</h2>
-    <p id="meetingLink"></p>
-    <p id="meetingAndHostLink"></p>
+    <p>Meeting Link: <span id="meetingLink"></span></p>
+    <p>Host Link: <span id="hostLink"></span></p>
 
     <script>
-        function generateLinks() {
-            const meetingId = document.getElementById("meetingId").value;
-            const hostPin = document.getElementById("hostPin").value;
+        document.getElementById('meetingForm').addEventListener('submit', function (event) {
+            event.preventDefault();
 
-            const meetingLink = `<a href="https://pex-gcc.com/ucsf/?conference=${meetingId}" target="_blank">Participant Meeting Link for ${meetingID}</a>`;
-            const meetingAndHostLink = `<a href="https://pex-gcc.com/ucsf/?conference=${meetingId}&role=host&pin=${hostPin}" target="_blank">Host Link for ${meetingID}</a>`;
+            const meetingID = document.getElementById('meetingID').value;
+            const hostPin = document.getElementById('hostPin').value;
 
-            document.getElementById("meetingLink").innerHTML = meetingLink;
-            document.getElementById("meetingAndHostLink").innerHTML = meetingAndHostLink;
-        }
+            const meetingLink = `https://example.com/meeting/${meetingID}`;
+            const hostLink = hostPin ? `https://example.com/meeting/${meetingID}/host?pin=${hostPin}` : '';
+
+            document.getElementById('meetingLink').textContent = meetingLink;
+            document.getElementById('hostLink').textContent = hostLink;
+        });
     </script>
 </body>
 </html>
