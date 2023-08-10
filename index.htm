@@ -28,11 +28,11 @@
             const meetingID = document.getElementById('meetingID').value;
             const hostPin = document.getElementById('hostPin').value;
 
-            const meetingLink = `https://example.com/meeting/${meetingID}`;
-            const hostLink = hostPin ? `https://example.com/meeting/${meetingID}/host?pin=${hostPin}` : '';
+            const meetingLink = `<a href="https://example.com/meeting/${meetingID}">${meetingID} Meeting</a>`;
+            const hostLink = hostPin ? `<a href="https://example.com/meeting/${meetingID}/host?pin=${hostPin}">${meetingID} Host</a>` : '';
 
-            document.getElementById('meetingLink').textContent = meetingLink;
-            document.getElementById('hostLink').textContent = hostLink;
+            document.getElementById('meetingLink').innerHTML = meetingLink;
+            document.getElementById('hostLink').innerHTML = hostLink;
         });
     </script>
 </body>
