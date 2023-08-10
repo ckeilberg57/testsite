@@ -3,23 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        #formContainer {
+            text-align: center;
+        }
+    </style>
     <title>Disaster Recovery Meeting Links Generator</title>
 </head>
 <body>
-    <h1>Enter your Zoom Meeting information</h1>
-    <form id="meetingForm">
-        <label for="meetingID">Zoom Meeting ID:</label>
-        <input type="text" id="meetingID" name="meetingID"><br><br>
+    <div id="formContainer">
+        <h1>Enter your Zoom Meeting information</h1>
+        <form id="meetingForm">
+            <label for="meetingID">Zoom Meeting ID:</label>
+            <input type="text" id="meetingID" name="meetingID"><br><br>
 
-        <label for="hostPin">Host PIN (Optional):</label>
-        <input type="text" id="hostPin" name="hostPin"><br><br>
+            <label for="hostPin">Host PIN (Optional):</label>
+            <input type="text" id="hostPin" name="hostPin"><br><br>
 
-        <input type="submit" value="Generate Pexip Disaster Recovery Links">
-    </form>
-
-    <h2>Generated Links:</h2>
-    <p id="linksContainer"></p>
-
+            <input type="submit" value="Generate Pexip Disaster Recovery Links">
+        </form>
+    
+        <h2>Generated Links:</h2>
+        <p id="linksContainer"></p>
+    </div>
     <script>
         document.getElementById('meetingForm').addEventListener('submit', function (event) {
             event.preventDefault();
