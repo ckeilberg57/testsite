@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meeting Links Generator</title>
+    <title>Disaster Recovery Meeting Links Generator</title>
 </head>
 <body>
-    <h1>Meeting Links Generator</h1>
+    <h1>Enter your Zoom Meeting information to Generage a Pexip Disaster Recovery Meeting</h1>
     <form id="meetingForm">
-        <label for="meetingID">Meeting ID:</label>
+        <label for="meetingID">Zoom Meeting ID:</label>
         <input type="text" id="meetingID" name="meetingID"><br><br>
 
-        <label for="hostPin">Host PIN:</label>
+        <label for="hostPin">Host PIN (Optional):</label>
         <input type="text" id="hostPin" name="hostPin"><br><br>
 
-        <input type="submit" value="Generate Links">
+        <input type="submit" value="Generate Pexip Disaster Recovery Links">
     </form>
 
     <h2>Generated Links:</h2>
@@ -30,10 +30,10 @@
             let linksHTML = '';
 
             if (hostPin) {
-                const hostLink = `<a href="https://example.com/meeting/${meetingID}/host?pin=${hostPin}">${meetingID} Host</a>`;
+                const hostLink = `<a href="https://pex-gcc.com/?conference=${meetingID}&role=host&pin=${hostPin}">Join Zoom ${meetingID} for Host</a>`;
                 linksHTML = hostLink;
             } else {
-                const meetingLink = `<a href="https://example.com/meeting/${meetingID}">${meetingID} Meeting</a>`;
+                const meetingLink = `<a href="https://pex-gcc.com/?conference=${meetingID}">Join Zoom ${meetingID} for Participants</a>`;
                 linksHTML = meetingLink;
             }
 
