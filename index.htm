@@ -18,8 +18,7 @@
     </form>
 
     <h2>Generated Links:</h2>
-    <p>Meeting Link: <span id="meetingLink"></span></p>
-    <p>Host Link: <span id="hostLink"></span></p>
+    <p id="linksContainer"></p>
 
     <script>
         document.getElementById('meetingForm').addEventListener('submit', function (event) {
@@ -28,11 +27,17 @@
             const meetingID = document.getElementById('meetingID').value;
             const hostPin = document.getElementById('hostPin').value;
 
-            const meetingLink = `<a href="https://example.com/meeting/${meetingID}">${meetingID} Meeting</a>`;
-            const hostLink = hostPin ? `<a href="https://example.com/meeting/${meetingID}/host?pin=${hostPin}">${meetingID} Host</a>` : '';
+            let linksHTML = '';
 
-            document.getElementById('meetingLink').innerHTML = meetingLink;
-            document.getElementById('hostLink').innerHTML = hostLink;
+            if (hostPin) {
+                const hostLink = `<a href="https://example.com/meeting/${meetingID}/host?pin=${hostPin}">${meetingID} Host</a>`;
+                linksHTML = hostLink;
+            } else {
+                const meetingLink = `<a href="https://example.com/meeting/${meetingID}">${meetingID} Meeting</a>`;
+                linksHTML = meetingLink;
+            }
+
+            document.getElementById('linksContainer').innerHTML = linksHTML;
         });
     </script>
 </body>
